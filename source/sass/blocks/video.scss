@@ -1,0 +1,63 @@
+.video {
+  padding-top: 91px;
+
+  @include vp--768 {
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  .title {
+    margin-bottom: 60px;
+
+    @include vp--768 {
+      margin-bottom: 53px;
+    }
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .video-player {
+    position: relative;
+
+    &__button {
+      @include reset-btn;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      -webkit-tap-highlight-color: transparent;
+
+      svg {
+        color: $color-default-white;
+        transition: color $trans--300;
+
+        @include vp--768 {
+          width: 67px;
+          height: 67px;
+        }
+
+        @include hover {
+          color: $color-gold;
+        }
+
+        &:active {
+          color: $color-gold;
+        }
+      }
+    }
+
+    img {
+      margin: 0 auto;
+
+      @include vp--768 {
+        max-height: 418px;
+        object-fit: cover;
+        height: 54.5vw;
+        object-position: -10px 0px;
+      }
+    }
+  }
+}

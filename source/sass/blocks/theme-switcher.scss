@@ -1,0 +1,62 @@
+.theme-switcher {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+
+  &__control {
+    position: absolute;
+    transition: transform $trans--300;
+    cursor: pointer;
+
+    @include hover {
+      svg {
+        color: $color-gold;
+      }
+    }
+
+    &:active {
+      svg {
+        color: $color-gold;
+      }
+    }
+
+    svg {
+      transition: color $trans--300;
+    }
+  }
+
+  .theme-switcher__control--light {
+    svg {
+      color: $color-default-white;
+    }
+  }
+
+  .theme-switcher__control--dark {
+    svg {
+      color: $color-black;
+    }
+  }
+
+  &[data-current-theme="dark"] {
+    .theme-switcher__control--light {
+      transform: none;
+    }
+
+    .theme-switcher__control--dark {
+      transform: translateX(100%);
+    }
+  }
+
+  &[data-current-theme="light"] {
+    .theme-switcher__control--dark {
+      transform: none;
+    }
+
+    .theme-switcher__control--light {
+      transform: translateX(-100%);
+    }
+  }
+}

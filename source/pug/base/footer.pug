@@ -1,0 +1,22 @@
+mixin footer(footerMods)
+  footer.footer(class=footerMods)
+    .container
+      .footer__wrapper
+        .footer__col-left
+          span &copy;
+          span 2022
+          a(href="https://github.com/Trouble-Andrew" class="footer__link" target="_blank" rel="noopener noreferrer") github
+        a(href="https://rs.school/js-stage0/" class="footer__link" target="_blank" rel="noopener noreferrer") Rolling Scopes School
+        ul.socials.footer__socials
+          li.socials__item
+            a(href="#" class="socials__link")
+              include ../../img/svg/icon-instagram.svg
+          li.socials__item
+            a(href="#" class="socials__link")
+              include ../../img/svg/icon-facebook.svg
+          li.socials__item
+            a(href="#" class="socials__link")
+              include ../../img/svg/icon-twitter.svg
+          li.socials__item
+            a(href="#" class="socials__link")
+              include ../../img/svg/icon-pinterest.svg

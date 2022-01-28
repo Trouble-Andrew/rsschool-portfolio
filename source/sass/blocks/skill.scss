@@ -1,0 +1,43 @@
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+
+  @include vp--1279 {
+    width: 260px;
+  }
+
+  @include vp--768 {
+    width: auto;
+    padding: 0 33px;
+  }
+
+  &__icon {
+    margin-bottom: 44px;
+
+    @include vp--768 {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 21px;
+    text-align: center;
+  }
+
+  &__text {
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+
+    @include vp--768 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}

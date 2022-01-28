@@ -1,0 +1,36 @@
+:root {
+  --body-bg: #000000;
+  --text-color: #ffffff;
+  --hero-img: url("../img/content/hero.jpg");
+
+  --btn-color: #bdae82;
+  --btn-bg: transparent;
+  /* --btn-border: none; */
+  --btn-hover: #ffffff;
+  --btn-hover-bg: transparent;
+  --btn-active-color: #000000;
+  --btn-active-bg: #bdae82;
+  --btn-active-hover-color: #ffffff;
+  --btn-active-hover-bg: #bdae82;
+
+  /* --btn-hover-bg: #1c1c1c; */
+
+  --btn-link-color: #000000;
+  --btn-link-bg: #bdae82;
+  --btn-link-border: #bdae82;
+  --btn-link-hover: #ffffff;
+  --btn-link-hover-bg: #bdae82;
+  --btn-box-filter: none;
+
+  --btn-price-color: #000000;
+  --btn-price-bg: #bdae82;
+  --btn-price-hover: #ffffff;
+  --btn-price-hover-bg: #bdae82;
+
+  --input-bg: rgba(0, 0, 0, 0.5);
+
+  --block-bg: #000;
+  --main-logo-color: hsl(0, 0%, 100%);
+  --footer-link-hover-color: hsl(0, 0%, 80%);
+  --burger-bg: #ffffff;
+}

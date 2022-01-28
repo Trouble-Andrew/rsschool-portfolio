@@ -1,0 +1,45 @@
+.price {
+  padding-top: 91px;
+  padding-bottom: 100px;
+
+  @include vp--768 {
+    padding-top: 50px;
+  }
+
+  .title {
+    margin-bottom: 60px;
+
+    @include vp--768 {
+      margin-bottom: 53px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+
+    @include vp--768 {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  &__list-item {
+    @include vp--1439 {
+      width: 33.3%;
+    }
+
+    @include vp--768 {
+      width: auto;
+    }
+  }
+
+  .price-card {
+    @include vp--768 {
+      margin: 0 auto;
+    }
+  }
+}

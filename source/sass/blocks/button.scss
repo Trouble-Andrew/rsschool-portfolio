@@ -1,0 +1,58 @@
+.button {
+  @include reset-btn;
+  position: relative;
+  display: block;
+  min-width: 220px;
+  padding: 5px 20px;
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  border: 2px solid $color-gold;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  transition: background-color $trans--300, color $trans--300;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+  @include hover {
+    color: var(--btn-hover);
+    background-color: var(--btn-hover-bg);
+  }
+
+  &:active {
+    color: var(--btn-hover);
+    background-color: var(--btn-hover-bg);
+  }
+
+  &--link {
+    color: var(--btn-link-color);
+    background-color: var(--btn-link-bg);
+    border: var(--btn-link-border);
+    filter: var(--btn-box-filter);
+
+    @include hover {
+      color: var(--btn-link-hover);
+      background-color: var(--btn-link-hover-bg);
+    }
+
+    &:active {
+      color: var(--btn-link-hover);
+      background-color: var(--btn-link-hover-bg);
+    }
+  }
+
+  &.is-active {
+    color: var(--btn-active-color);
+    background-color: var(--btn-active-bg);
+
+    @include hover {
+      color: var(--btn-active-hover-color);
+      background-color: var(--btn-active-hover-bg);
+    }
+
+    &:active {
+      color: var(--btn-active-hover-color);
+      background-color: var(--btn-active-hover-bg);
+    }
+  }
+}
