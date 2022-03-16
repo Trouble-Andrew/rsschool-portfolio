@@ -1,4 +1,6 @@
 .video {
+  max-width: 1400px;
+  margin: 0 auto;
   padding-top: 91px;
 
   @include vp--768 {
@@ -20,6 +22,7 @@
 
   .video-player {
     position: relative;
+    overflow: hidden;
 
     &__button {
       @include reset-btn;
@@ -28,6 +31,7 @@
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
       border-radius: 50%;
+      transition: opacity $trans--300;
       -webkit-tap-highlight-color: transparent;
 
       svg {
@@ -49,8 +53,23 @@
       }
     }
 
-    img {
+    img,
+    video {
+      // width: 1400px;
+      height: 705px;
+      width: 100%;
       margin: 0 auto;
+      object-fit: cover;
+
+      @include vp--1439 {
+        // height: 41.47vw;
+      }
+
+      @media (max-width: 1400px) {
+        height: auto;
+        height: 50.35vw;
+        object-fit: cover;
+      }
 
       @include vp--768 {
         max-height: 418px;
@@ -59,5 +78,152 @@
         object-position: -10px 0px;
       }
     }
+
+    &__controls {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 60px;
+      padding: 0 20px;
+      padding-bottom: 5px;
+      background-color: rgba(0, 0, 0, 0.3);
+      // background-color: yellowgreen;
+
+      transform: translateY(100%);
+      transition: transform $trans--300;
+
+      @include vp--768 {
+        height: 35px;
+        padding: 0 10px;
+        padding-bottom: 3px;
+      }
+
+      &.is-active {
+        transform: none;
+      }
+    }
+
+    &__controls-play,
+    &__controls-volume {
+      @include reset-btn;
+      width: 40px;
+      height: 36px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      transition: color, $trans--300;
+      color: $color-default-white;
+
+      -webkit-tap-highlight-color: transparent;
+
+      @include vp--768 {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color-gold;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .icon-pause {
+        display: none;
+      }
+    }
+
+    &__controls-volume {
+      margin-left: auto;
+      margin-right: 20px;
+
+      .icon-mute {
+        display: none;
+      }
+
+      .icon-volume {
+        display: block;
+      }
+
+      &--muted {
+        .icon-mute {
+          display: block;
+        }
+
+        .icon-volume {
+          display: none;
+        }
+      }
+    }
+
+    .toggle--playing {
+      .icon-pause {
+        display: block;
+      }
+
+      .icon-play {
+        display: none;
+      }
+    }
+  }
+}
+
+.video-player--playing {
+  .video-player__button {
+    opacity: 0;
+    cursor: default;
+  }
+}
+
+.video-player__slider {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 4px;
+  background: $color-default-white;
+  border-radius: 5px;
+  background-image: linear-gradient($color-gold, $color-gold);
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+
+  @include vp--768 {
+    height: 5px;
+  }
+
+  @include vp--374 {
+    width: 40%;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: $color-gold;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background, .3s ease-in-out;
+    border: none;
+
+    @include vp--768 {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  &::-webkit-slider-runnable-track  {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
   }
 }

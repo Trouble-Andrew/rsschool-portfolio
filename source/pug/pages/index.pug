@@ -92,7 +92,21 @@ block main
         h2.title.title--md
           span(data-i18="video") Video
         .video-player
-          +img("content", "video-player", "jpg", 1400, 705, "video preview")
+          //- +img("content", "video-player", "jpg", 1400, 705, "video preview")
+          video(src="video/video.mp4" poster="img/content/video-player.jpg" width="1400" height="705").viewer
+          .video-player__controls
+            .progress
+              .progress__filled
+
+            button(type="button" class="video-player__controls-play toggle")
+              include ../../img/svg/icon-control-play.svg
+              include ../../img/svg/icon-pause.svg
+
+            button(type="button" class="video-player__controls-volume")
+              include ../../img/svg/icon-volume.svg
+              include ../../img/svg/icon-mute.svg
+            input(type="range" name="volume" class="video-player__slider" min="0" max="1" step="0.02" value="0.7" data-volume)
+
           button(type="button" class="video-player__button")
             include ../../img/svg/icon-play.svg
 

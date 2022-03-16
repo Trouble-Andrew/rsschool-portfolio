@@ -6,6 +6,8 @@ import preloadImages from './modules/preload-images';
 import initTranslate from './modules/init-translate';
 import wavesBtn from './modules/init-waves';
 import initSwitch from './modules/switch-theme';
+import initVolumeRange from './modules/init-volume-range';
+import initVideoPlayer from './modules/init-video-player';
 import changeClassActive from './utils/change-class-active';
 import {iosVhFix} from './utils/ios-vh-fix';
 
@@ -40,6 +42,8 @@ window.addEventListener('DOMContentLoaded', () => {
     changeClassActive();
     initTranslate();
     wavesBtn();
+    initVolumeRange();
+    initVideoPlayer();
 
 //     console.log(
 //     `Смена изображений в секции portfolio: 25

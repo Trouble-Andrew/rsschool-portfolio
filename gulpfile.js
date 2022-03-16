@@ -110,6 +110,7 @@ const copy = () => {
   return gulp.src([
     'source/fonts/**',
     'source/img/**',
+    'source/video/**',
     'source/data/**',
     'source/favicon/**',
     'source/video/**', // git искажает видеофайлы, некоторые шрифты, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
